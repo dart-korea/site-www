@@ -1,11 +1,11 @@
 ---
-title: Dart documentation
-description: Learn to use the Dart language and libraries.
+title: Dart 문서
+description: Dart 언어 및 라이브러리 사용법을 배워봅시다.
 toc: false
 ---
 
-Welcome to the Dart documentation!
-Here are some of the most visited pages:
+Dart 문서에 오신 걸 환영합니다!
+아래에 반드시 방문하셔야 할 페이지들이 몇 개 있습니다.
 
 {% comment %}
 To update these cards, edit src/_data/docs_cards.yml.
