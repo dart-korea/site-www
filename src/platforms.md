@@ -1,62 +1,56 @@
 ---
-title: Platforms
-description: "You can use Dart to write mobile apps, web apps, command-line apps, backends, and more."
+title: 플랫폼
+description: "모바일 앱, 웹 앱, 커맨드 라인 앱, 백엔드, 더 많은 곳에서 Dart를 사용할 수 있습니다."
 toc: true
 ---
 
-You can use Dart to write simple scripts or full-featured apps. Whether you're
-creating a mobile app, web app, command-line script, or server-side app, there's
-a Dart solution for that.
+Dart를 사용하여 간단한 스크립트를 작성할 수도 있지만, 완전한 기능을 가진 앱을 작성할 수도 있습니다.
+모바일 앱, 웹 앱, 커맨드 라인 스크립트, 서버 사이드 앱 중 어떤 걸 만들어도 Dart를 해결책으로 사용할 수 있습니다.
 
-Flexible compiler technology lets you run Dart code in different ways,
-depending on your target platform and goals:
+유연한 컴파일러 기술은 여러분이 목표로 하고 있는 플랫폼과 목적에 따라 
+Dart 코드가 서로 다른 방법으로 동작할 수 있게 합니다.
 
-  * **Dart Native**: For programs targeting devices (mobile, desktop, server,
-    and more), Dart Native includes both a Dart VM with JIT (just-in-time)
-    compilation and an AOT (ahead-of-time) compiler for producing machine
-    code.
-  * **Dart Web**: For programs targeting the web, Dart Web includes both a
-    development time compiler (`dartdevc`) and a production time compiler
-    (`dart2js`).
+  * **Dart Native**: 기기 (모바일, 데스크탑, 서버 등)를 대상으로 하는 프로그램을 작성할 때 사용할 수 있습니다.
+  Dart Native는 Dart VM과 JIT (just-in-time) 컴파일 방식과 
+  머신 코드 (machine code)를 만들기 위한 AOT (ahead-of-time) 컴파일 방식을 모두 지원합니다.
+  * **Dart Web**: 웹을 대상으로 하는 프로그램을 작성할 때 사용할 수 있습니다.
+  Dart Web은 개발할 때 사용하는 컴파일러 (`dartdevc`)와 프로덕션을 만들 때 사용하는 컴파일러 (`dart2js`)를 모두 지원합니다.
 
 <img src="{% asset platforms.svg @path %}" width="800px" alt="Dart platform">
 
-## Dart Native (VM JIT and AOT)
+## Dart Native (VM JIT와 AOT)
 
-Dart Native enables running Dart code compiled to native ARM or X64
-machine code for mobile, desktop, and server apps.
+Dart Native는 Dart 코드를 모바일, 데스크탑, 서버 앱에서 동작하는 네이티브 ARM 또는 X64 머신 코드로 컴파일하여 동작시킬 수 있습니다.
 
-The [Flutter framework]({{site.flutter}}) is a popular multi-platform UI toolkit
-that's powered by Dart Native when targeting mobile or desktop devices.
+[Flutter framework]({{site.flutter}})는 인기 있는 멀티 플랫폼 UI 툴킷으로,
+Dart Native를 사용하여 모바일이나 데스크탑 기기를 지원하고 있습니다.
 
-More information:
+더 자세한 정보는:
 * [Flutter get started documentation]({{site.flutter}}/docs/get-started/)
 * [Get started: command-line and server apps](/tutorials/server/get-started)
 * [Write command-line apps](/tutorials/server/cmdline)
 * [Write HTTP clients and servers](/tutorials/server/httpserver)
 
-### Lightning fast developer workflow (Dart VM JIT)
+### 번개처럼 빠른 개발 흐름 (Dart VM JIT)
 
-Having a fast developer cycle is critical for iteration. 
+빠른 개발 싸이클은 반복 작업에서 중요합니다.
 
-The Dart VM has a just-in-time compiler (JIT) that supports both pure interpretation
-(as required on iOS devices, for example) and runtime optimization.
+Dart VM은 just-in-time 컴파일러 (JIT)를 가지며,
+iOS 기기에서 필요로 하는 pure interpretation과 런타임 최적화를 둘 다 지원합니다.
 
-More information: [`dart` VM tool](/tools/dart-vm)
+더 자세한 정보는 [`dart` VM tool](/tools/dart-vm)을 살펴보세요.
 
-### Optimized production code (Dart AOT)
+### 프로덕션 코드 최적화하기 (Dart AOT)
 
-When apps are ready to be deployed to production — whether you're
-publishing to an app store or deploying to a production backend —
-you can use the Dart AOT compiler to ahead-of-time compile your app
-to native ARM or X64 code machine code.
-Your AOT-compiled app starts instantly and runs smoothly.
+앱을 프로덕션으로 배포할 준비가 되었을 때,
+Dart AOT 컴파일러를 사용해 어플리케이션 코드를 ARM 또는 X64 머신 코드로 ahead-of-time 컴파일할 수 있습니다.
+AOT 컴파일된 앱은 빠르게 시작되고 부드럽게 동작합니다.
 
-The AOT-compiled code runs inside an efficient Dart runtime that enforces
-the sound Dart type system and manages memory using fast object allocation and a [generational garbage
-collector.](https://medium.com/flutter-io/flutter-dont-fear-the-garbage-collector-d69b3ff1ca30)
+AOT 컴파일된 코드는 견고한 Dart 타입 시스템과 빠른 객체 할당을 사용한 메모리 관리 및 [generational garbage
+collector.](https://medium.com/flutter-io/flutter-dont-fear-the-garbage-collector-d69b3ff1ca30)를 가진 
+효율적인 Dart 런타임에서 동작합니다.
 
-More information: [`dart2aot` tool](/tools/dart2aot)
+더 자세항 정보는 [`dart2aot` tool](/tools/dart2aot)을 살펴보세요.
 
 ## Dart Web (JavaScript)
 
