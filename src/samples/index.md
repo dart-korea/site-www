@@ -148,15 +148,14 @@ import 'package:test/test.dart';
 import 'path/to/my_other_file.dart';
 {% endprettify %}
 
-[Read more](/guides/language/language-tour#libraries-and-visibility) about libraries and visibility in Dart,
-including library prefixes, `show` and `hide`, and lazy loading through the `deferred` keyword.
-
+[Read more](/guides/language/language-tour#libraries-and-visibility)
+라이브러리 접두사, `show` 와 `hide`, `deferred` 키워드를 이용한 레이지 로딩을 포함하는
+Dart의 라이브러리와 visibility에 대해 살펴보세요.
 
 ## Classes
 
-Here's an example of a class with three properties, two constructors,
-and a method. One of the properties can't be set directly, so it's
-defined using a getter method (instead of a variable).
+여기 세 개의 속성과, 두개의 생성자, 그리고 하나의 메서드를 가진 class 예제가 있습니다.
+속성 중 하나를 직접 설정할 수 없으므로, getter 메서드를 사용해서 정의합니다. (변수 대신 사용합니다)
 
 {% comment %}
 The linter rule sort_constructors_first made us put the getter below
@@ -195,7 +194,7 @@ class Spacecraft {
 }
 {% endprettify %}
 
-You might use the `Spacecraft` class like this:
+`Spacecraft` 클래스를 아래 예제처럼 사용할 수 있습니다.
 
 <?code-excerpt "misc/test/samples_test.dart (use class)" plaster="none"?>
 {% prettify dart %}
@@ -206,14 +205,13 @@ var voyager3 = Spacecraft.unlaunched('Voyager III');
 voyager3.describe();
 {% endprettify %}
 
-[Read more](/guides/language/language-tour#classes) about classes in Dart,
-including initializer lists, optional `new` and `const`, redirecting constructors,
-`factory` constructors, getters, setters, and much more.
+[Read more](/guides/language/language-tour#classes) 
+initializer 목록, 선택적 `new` 와 `const`, 리디렉션 생성자, `factory` 생성자, getter, setter 등을 포함하는
+Dart의 클래스에 대해서 살펴보세요.
 
+## 상속 (Inheritance)
 
-## Inheritance
-
-Dart has single inheritance.
+Dart는 단일 상속을 가집니다.
 
 <?code-excerpt "misc/lib/samples/spacecraft.dart (extends)"?>
 {% prettify dart %}
@@ -224,12 +222,13 @@ class Orbiter extends Spacecraft {
 }
 {% endprettify %}
 
-[Read more](/guides/language/language-tour#extending-a-class) about extending classes, the optional `@override` annotation, and more.
+[Read more](/guides/language/language-tour#extending-a-class) 
+클래스를 확장하는 법과 선택적 `@override` 어노테이션 등에 대해 살펴보세요.
 
 
-## Mixins
+## 믹스인 (Mixins)
 
-Mixins are a way of reusing code in multiple class hierarchies. The following class can act as a mixin:
+믹스인은 여러 클래스 계층에서 코드를 재사용할 수 있게 합니다. 아래 클래스는 믹스인으로써 사용 가능합니다.
 
 <?code-excerpt "misc/lib/samples/spacecraft.dart (mixin)"?>
 {% prettify dart %}
@@ -241,7 +240,7 @@ class Piloted {
 }
 {% endprettify %}
 
-To add a mixin's capabilities to a class, just extend the class with the mixin.
+믹스인의 기능을 클래스에 추가하려면, 믹스인으로 클래스를 확장하면 됩니다.
 
 <?code-excerpt "misc/lib/samples/spacecraft.dart (mixin use)" replace="/with/[!$&!]/g"?>
 {% prettify dart %}
@@ -250,14 +249,15 @@ class PilotedCraft extends Spacecraft [!with!] Piloted {
 }
 {% endprettify %}
 
-`PilotedCraft` now has the `astronauts` field as well as the `describeCrew()` method.
+이제 `PilotedCraft` 는 `describeCrew()` 메서드와 `astronauts` 필드를 가집니다.
 
-[Read more](/guides/language/language-tour#adding-features-to-a-class-mixins) about mixins.
+[Read more](/guides/language/language-tour#adding-features-to-a-class-mixins)
+믹스인에 대해 더 살펴보세요.
 
+## 인터페이스와 추상 클래스 (Interfaces and abstract classes)
 
-## Interfaces and abstract classes
-
-Dart has no `interface` keyword. Instead, all classes implicitly define an interface. Therefore, you can implement any class.
+Dart에는 `interface` 키워드가 없습니다. 대신 모든 클래스가 암시적으로 인터페이스를 정의합니다.
+따라서 모든 클래스로 구현할 수 있습니다.
 
 <?code-excerpt "misc/lib/samples/spacecraft.dart (implements)"?>
 {% prettify dart %}
@@ -266,9 +266,11 @@ class MockSpaceship implements Spacecraft {
 }
 {% endprettify %}
 
-[Read more](/guides/language/language-tour#implicit-interfaces) about implicit interfaces.
+[Read more](/guides/language/language-tour#implicit-interfaces)
+암시적 인터페이스에 대해 더 살펴보세요.
 
-You can create an abstract class to be extended (or implemented) by a concrete class. Abstract classes can contain abstract methods (with empty bodies).
+구상 클래스 (concrete class)를 통해 확장 (또는 구현)될 추상 클래스 (abstract class)를 만들 수 있습니다.
+추상 클래스는 (비어있는 바디를 가진) 추상 메서드를 가질 수 있습니다.
 
 <?code-excerpt "misc/lib/samples/spacecraft.dart (abstract)" replace="/abstract/[!$&!]/g"?>
 {% prettify dart %}
@@ -282,16 +284,16 @@ You can create an abstract class to be extended (or implemented) by a concrete c
   }
 }
 {% endprettify %}
+`Describable` 을 확장한 모든 클래스는 확장한 구현체의 `describe()`를 호출하는,
+`describeWithEmphasis()` 메서드를 가집니다.
 
-Any class extending `Describable` has the `describeWithEmphasis()` method, which calls the extender's implementation of `describe()`.
-
-[Read more](/guides/language/language-tour#abstract-classes) about abstract classes and methods.
+[Read more](/guides/language/language-tour#abstract-classes)
+추상 클래스와 메서드에 대해 살펴보세요.
 
 
 ## Async
 
-Avoid callback hell and make your code much more readable by
-using `async` and `await`.
+콜백 지옥을 비하고 코드를 더 가독성 좋게 만들기 위해 `async` 와 `await` 를 사용할 수 있습니다.
 
 <?code-excerpt "misc/test/samples_test.dart (async)" replace="/async/[!$&!]/g"?>
 {% prettify dart %}
@@ -303,7 +305,7 @@ Future<void> printWithDelay(String message) [!async!] {
 }
 {% endprettify %}
 
-The method above is equivalent to:
+위 메서드는 아래와 동일합니다.
 
 <?code-excerpt "misc/test/samples_test.dart (Future.then)"?>
 {% prettify dart %}
@@ -313,9 +315,8 @@ Future<void> printWithDelay(String message) {
   });
 }
 {% endprettify %}
-
-As the next example shows, `async` and `await` help make asynchronous code
-easy to read.
+ 
+다음 예제에서는 `async` 와 `await` 가 비동기 코드를 어떻게 읽기 쉽게 만드는 지 보여줍니다.
 
 <?code-excerpt "misc/test/samples_test.dart (await)"?>
 {% prettify dart %}
@@ -338,7 +339,7 @@ Future<void> createDescriptions(Iterable<String> objects) async {
 }
 {% endprettify %}
 
-You can also use `async*`, which gives you a nice, readable way to build streams.
+스트림 (stream)을 구축할 때 `async*` 을 사용하면 멋지고 가독성 좋은 코드를 만들 수 있습니다.
 
 <?code-excerpt "misc/test/samples_test.dart (async*)"?>
 {% prettify dart %}
@@ -350,14 +351,14 @@ Stream<String> report(Spacecraft craft, Iterable<String> objects) async* {
 }
 {% endprettify %}
 
-[Read more](/guides/language/language-tour#asynchrony-support) about
-asynchrony support, including async functions, `Future`, `Stream`,
-and the asynchronous loop (`await for`).
+
+[Read more](/guides/language/language-tour#asynchrony-support)
+async 함수, `Future`, `Stream` 과 비동기 루프에 대한 내용을 포함하는 비동기 지원에 대해 살펴보세요.
 
 
-## Exceptions
+## 예외 (Exceptions)
 
-To raise an exception, use `throw`:
+예외를 일으키려면 `throw` 를 사용합니다.
 
 <?code-excerpt "misc/test/samples_test.dart (throw)"?>
 {% prettify dart %}
@@ -366,7 +367,7 @@ if (astronauts == 0) {
 }
 {% endprettify %}
 
-To catch an exception, use a `try` statement with `on` or `catch` (or both):
+예외를 캐치하기 위해서 `try` 문을 `on` 또는 `catch` (또는 둘 다) 와 함께 사용할 수 있습니다.
 
 <?code-excerpt "misc/test/samples_test.dart (try)"?>
 {% prettify dart %}
@@ -382,17 +383,16 @@ try {
 }
 {% endprettify %}
 
-Note that the code above is asynchronous;
-`try` works for both synchronous code and code in an async function.
+위 코드가 비동기라는 점에 주의하시길 바랍니다.
+`try` 는 비동기 함수 내 코드와 동기 코드에서 모두 잘 동작합니다.
 
-[Read more](/guides/language/language-tour#exceptions) about exceptions, including stack traces, `rethrow`, and the difference between
-Error and Exception.
+[Read more](/guides/language/language-tour#exceptions) 
+추적 스택, `rethrow`, 에러와 예외의 차이점에 대해서 다루는 예외에 대해서 살펴보세요.
 
 
-## Other topics
+## 다른 주제
 
-Many more code samples are in the
-[language tour](/guides/language/language-tour) and the
-[library tour](/guides/libraries/library-tour).
-Also see the [Dart API reference,]({{site.dart_api}})
-which often contains examples.
+더 풍부한 코드 샘플은 
+[언어 살펴보기](/guides/language/language-tour)와
+[라이브러리 살펴보기](/guides/libraries/library-tour)에 있습니다.
+많은 예제를 포함하고 있는 [Dart API reference]({{site.dart_api}})를 보셔도 좋습니다.
