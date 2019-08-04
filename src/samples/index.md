@@ -1,27 +1,25 @@
 ---
-title: Language samples
-description: Examples of idiomatic Dart with links to larger examples.
+title: 언어 샘플
+description: 자연스럽게 큰 예제와 이어지는 Dart 예제
 ---
 
-This collection is not exhaustive&mdash;it's just a brief
-introduction to the language for people who like to learn by example.
-You might also want to check out the language and library tours.
+아래 컬렉션이 하나도 빠짐없이 완벽한 건 아닙니다.
+아래 컬렉션은 예제를 통해 배우는 걸 좋아하는 사람들을 위해 간단히 Dart를 소개합니다.
+언어 및 라이브러리 살펴보기를 통해 더 자세히 Dart에 대해 살펴보세요.
 
 <div class="card-grid">
   <div class="card">
-    <h3><a href="/guides/language/language-tour">Language tour</a></h3>
+    <h3><a href="/guides/language/language-tour">언어 살펴보기</a></h3>
     <p>
-      A comprehensive tour, with examples, of the Dart language.
-      Most of the <em>read more</em> links in this page
-      point to the language tour.
+      Dart 언어를 예제와 함께 포괄적으로 살펴봅니다.
+      이 페이지 안에 존재하는 대부분의 <em>read more</em> 링크는 언어 살펴보기로 이어집니다.
     </p>
   </div>
   <div class="card">
-    <h3><a href="/guides/libraries/library-tour">Library tour</a></h3>
+    <h3><a href="/guides/libraries/library-tour">라이브러리 살펴보기</a></h3>
     <p>
-      An example-based introduction to the Dart core libraries.
-      See how to use the built-in types, collections,
-      dates and times, streams, and more.
+      Dart 핵심 라이브러리를 예제와 함께 소개합니다.
+      built-in types, collections, date와 time, stream 등을 어떻게 사용하는 지 살펴봅니다.
     </p>
   </div>
 </div>
@@ -29,8 +27,8 @@ You might also want to check out the language and library tours.
 
 ## Hello World
 
-Every app has a `main()` function.
-To display text on the console, you can use the top-level `print()` function:
+모든 앱은 하나의 `main()` 함수를 가집니다.
+콘솔에 텍스트를 표시하려면 최상위 함수인 `print()` 를 사용할 수 있습니다.
 
 <?code-excerpt "misc/test/samples_test.dart (hello-world)"?>
 {% prettify dart %}
@@ -40,10 +38,10 @@ void main() {
 {% endprettify %}
 
 
-## Variables
+## 변수 (Variables)
 
-Even in type-safe Dart code, most variables don't need explicit types,
-thanks to type inference:
+type-safe Dart 코드일지라도 대부분의 변수에는 명시적 타입을 필요로 하지 않습니다.
+타입 추론이 있기 때문입니다.
 
 <?code-excerpt "misc/test/samples_test.dart (var)"?>
 {% prettify dart %}
@@ -57,12 +55,12 @@ var image = {
 };
 {% endprettify %}
 
-[Read more](/guides/language/language-tour#variables) about variables in Dart, including default values, the `final` and `const` keywords, and static types.
+[Read more](/guides/language/language-tour#variables)
+기본 값, `final` 과 `const` 키워드, 정적 타입 등을 포함하는 Dart의 변수에 대해 살펴보세요.
 
+## 제어 흐름 문 (Control flow statement)
 
-## Control flow statements
-
-Dart supports the usual control flow statements:
+Dart는 흔히 사용하는 제어 흐름 문을 지원합니다.
 
 <?code-excerpt "misc/test/samples_test.dart (control-flow)"?>
 {% prettify dart %}
@@ -85,14 +83,12 @@ while (year < 2016) {
 }
 {% endprettify %}
 
-[Read more](/guides/language/language-tour#control-flow-statements) about control flow statements in Dart,
-including `break` and `continue`, `switch` and `case`, and `assert`.
+[Read more](/guides/language/language-tour#control-flow-statements) 
+`break` 와 `continue`, `switch` 와 `case`, `assert` 를 포함하는 Dart의 제어 흐름 문에 대해 살펴보세요.
 
+## 함수 (Functions)
 
-## Functions
-
-[We recommend](/guides/language/effective-dart/design#types)
-specifying the types of each function's arguments and return value:
+각 함수의 인수와 반환 값에 타입을 정의하는 걸 [권장합니다](/guides/language/effective-dart/design#types).
 
 <?code-excerpt "misc/test/samples_test.dart (functions)"?>
 {% prettify dart %}
@@ -104,26 +100,24 @@ int fibonacci(int n) {
 var result = fibonacci(20);
 {% endprettify %}
 
-A shorthand `=>` (_arrow_) syntax is handy for functions that
-contain a single statement.
-This syntax is especially useful when passing anonymous functions as arguments:
+단일 문을 포함하고 있는 함수에서 간단히 사용할 수 있는 `=>` (_arrow_) 문법이 있습니다.
+이 문법은 익명 함수를 인수로 전달하고자 할 때 특히 유용하게 사용할 수 있습니다.
 
 <?code-excerpt "misc/test/samples_test.dart (arrow)"?>
 {% prettify dart %}
 flybyObjects.where((name) => name.contains('turn')).forEach(print);
 {% endprettify %}
 
-Besides showing an anonymous function (the argument to `where()`),
-this code shows that you can use a function as an argument:
-the top-level `print()` function is an argument to `forEach()`.
+(`where()` 의 인수인) 익명 함수를 표시하는 것 외에도,
+이 코드에서는 함수를 인수로 사용 가능하다는 것을 보여줍니다.
+최상위 `print()` 함수가 `forEach()` 에 인수로 전달되고 있습니다.
 
-[Read more](/guides/language/language-tour#functions) about functions in Dart,
-including optional parameters, default parameter values, and lexical scope.
+[Read more](/guides/language/language-tour#functions) 
+선택적 파라미터, 기본 파라미터 값, lexical scope를 포함하는 Dart의 함수에 대해 살펴보세요.
 
+## 주석 (Comments)
 
-## Comments
-
-Dart comments usually start with `//`.
+Dart 주석은 보통 `//` 로 시작합니다.
 
 {% prettify dart %}
 // This is a normal, one-line comment.
@@ -135,13 +129,12 @@ Dart comments usually start with `//`.
 /* Comments like these are also supported. */
 {% endprettify %}
 
-[Read more](/guides/language/language-tour#comments) about comments in Dart,
-including how the documentation tooling works.
-
+[Read more](/guides/language/language-tour#comments)
+문서화 도구가 어떻게 동작하는 지를 포함하는 Dart의 주석에 대해서 살펴보세요.
 
 ## Imports
 
-To access APIs defined in other libraries, use `import`.
+다른 라이브러리에서 정의한 API에 접근하기 위해 `import` 를 사용합니다.
 
 <?code-excerpt "misc/test/samples_test.dart (import)" plaster="none"?>
 {% prettify dart %}
