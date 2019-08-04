@@ -387,7 +387,7 @@ try {
 `try` 는 비동기 함수 내 코드와 동기 코드에서 모두 잘 동작합니다.
 
 [Read more](/guides/language/language-tour#exceptions) 
-추적 스택, `rethrow`, 에러와 예외의 차이점에 대해서 다루는 예외에 대해서 살펴보세요.
+stack trace, `rethrow`, 에러와 예외의 차이점에 대해서 다루는 예외에 대해서 살펴보세요.
 
 
 ## 다른 주제
